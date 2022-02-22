@@ -657,7 +657,7 @@ function hookIntoCompiler (compiler, options, plugin) {
 
     // Extract paths to .js, .mjs and .css files from the current compilation
     const entryPointPublicPathMap = {};
-    const extensionRegexp = /\.(css|js|mjs)(\?|$)/;
+    const extensionRegexp = options.extensionRegexp || /\.(css|js|mjs)(\?|$)/;
     for (let i = 0; i < entryNames.length; i++) {
       const entryName = entryNames[i];
       /** entryPointUnfilteredFiles - also includes hot module update files */
